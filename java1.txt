@@ -1,0 +1,33 @@
+
+package javaapplication26;
+import java.util.*;
+public class JavaApplication26 {
+
+    public static void main(String[] args) {
+    Scanner in=new Scanner(System.in);
+    String s=in.nextLine();
+    String n=s.replaceAll("[^0-9]","");
+    String op=s.replaceAll("[^+-/*]","");
+    int x=0;
+    int res=Integer.parseInt(String.valueOf(n.charAt(0)));
+    for (int i = 1; i < n.length(); i++) {
+      int n2=Integer.parseInt(String.valueOf(n.charAt(i)));
+      switch (op.charAt(x++))
+      {
+        case '+':
+          res+=n2;
+          break;
+        case '-':
+          res-=n2;
+          break;
+        case '/':
+          res/=n2;
+          break;
+        case '*':
+          res*=n2;
+          break;
+      }
+    }
+    System.out.println(res); 
+    } 
+}
